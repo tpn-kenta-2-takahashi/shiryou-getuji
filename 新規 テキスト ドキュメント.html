@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>生成AI攻略ステップアップ｜ノウハウ共有シリーズ</title>
+
+  <style>
+    :root{
+      --bg: #0b0f19;
+      --card: rgba(255,255,255,0.06);
+      --card2: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.10);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --muted2: rgba(255,255,255,0.55);
+      --accent: rgba(110,231,183,0.95);   /* mint */
+      --accent2: rgba(59,130,246,0.95);   /* blue */
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --radius: 16px;
+    }
+
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+      line-height:1.7;
+      color: var(--text);
+      background:
+        radial-gradient(900px 600px at 20% 10%, rgba(59,130,246,0.18), transparent 55%),
+        radial-gradient(900px 600px at 80% 20%, rgba(110,231,183,0.16), transparent 55%),
+        radial-gradient(700px 500px at 50% 90%, rgba(236,72,153,0.10), transparent 60%),
+        var(--bg);
+    }
+
+    header{
+      padding: 38px 20px 22px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent);
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .title{
+      display:flex;
+      gap: 12px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    h1{
+      margin: 10px 0 6px;
+      font-size: 30px;
+      letter-spacing: 0.2px;
+    }
+
+    .sub{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    main{
+      padding: 22px 20px 34px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    h2{ margin: 0 0 10px; font-size: 18px; }
+    p{ margin: 10px 0; color: var(--text); }
+
+    .muted{ color: var(--muted); }
+    .muted2{ color: var(--muted2); font-size: 13px; }
+
+    .btns{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    a.btn{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      text-decoration:none;
+      color: var(--text);
+      background: rgba(255,255,255,0.05);
+      transition: transform .05s ease, border-color .15s ease, background .15s ease;
+    }
+    a.btn:hover{
+      border-color: rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-1px);
+    }
+
+    .pill{
+      display:inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      font-size: 12.5px;
+      margin-left: 8px;
+    }
+
+    .row{
+      display:flex;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .kicker{
+      color: rgba(255,255,255,0.85);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .hl{
+      background: linear-gradient(90deg, rgba(110,231,183,0.25), rgba(59,130,246,0.22));
+      border-radius: 10px;
+      padding: 0 6px;
+    }
+
+    footer{
+      padding: 18px 20px 30px;
+      border-top: 1px solid var(--border);
+      color: var(--muted2);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .small{
+      font-size: 12.5px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="title">
+      <span class="badge">📌 ノウハウ共有シリーズ</span>
+      <span class="badge">🗓️ 月1更新予定</span>
+      <span class="badge">🎯 AIを“使える”に寄せる</span>
+    </div>
+
+    <h1>生成AI「謎挙動」攻略ステップアップ！</h1>
+    <p class="sub">
+      業務で感じたモヤモヤを、<span class="hl">再現できるコツ</span>に落とし込んでいく全5回（予定）です。
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="grid">
+
+      <!-- シリーズ説明 -->
+      <section class="card">
+        <div class="row">
+          <div>
+            <div class="kicker">このシリーズのねらい</div>
+            <h2>AIの利用を促しつつ、現場で得た知識・経験を共有します</h2>
+          </div>
+          <span class="pill">まずは身近な生成AIから</span>
+        </div>
+
+        <p class="muted">
+          今回の資料は、AIの利用を促すとともに、自分が業務の中で知った知識や経験を共有できればと思い作成しました。
+          中でも最も身近で簡単に使うことができる <strong>大規模言語モデル（生成AI）</strong> を中心に扱います。
+        </p>
+
+        <p class="muted">
+          生成AIを使っていて「指示が通じない」「思った結果が返ってこない」と感じる場面が多く、
+          その原因をAIの性能ではなく、“指示の出し方”や“付き合い方”の観点で整理していきます。
+        </p>
+
+        <p class="muted">
+          前半（Lv.1〜Lv.2）では基礎編として、まず全員が共通で押さえておきたいポイントを扱い、
+          後半（Lv.3以降）は内容を見直しつつ、実務で「なるほど」と腑に落ちる実例も交えていく予定です。
+        </p>
+
+        <p class="muted2">
+          ※ Lv.3以降は題材の変化もあり得るため、まずは “Coming Soon” としておきます。
+        </p>
+      </section>
+
+      <!-- Lv.1 -->
+      <section class="card">
+        <div class="row">
+          <div>
+            <div class="kicker">Lv.1</div>
+            <h2>なぜ「指示」が通じないのか？ <span class="pill">公開中</span></h2>
+          </div>
+          <span class="pill">基礎：構造化 / Few-Shot</span>
+        </div>
+
+        <p class="muted">
+          Markdownでの構造化や、例を見せる（Few-Shot）など、
+          生成AIに意図を伝えるための基礎をまとめています。
+        </p>
+
+        <div class="btns">
+          <!-- ★PDFのファイル名は実際のものに合わせてください -->
+          <a class="btn" href="docs/prompt-engineering-basic-v2.pdf" target="_blank" rel="noreferrer">
+            📄 資料を見る（PDF）
+          </a>
+          <a class="btn" href="docs/prompt-engineering-basic-v2.pdf" download>
+            ⬇️ ダウンロード
+          </a>
+
+          <!-- おまけページ（あとで詰める前提） -->
+          <a class="btn" href="lv1-extra.html">
+            ✍️ PS / 後日談（作り方など）
+          </a>
+        </div>
+
+        <p class="muted2">
+          ※ おまけページは「作成の流れ」や「やってみて分かったこと」を置く想定です（内容は後で調整）。
+        </p>
+      </section>
+
+      <!-- Lv.2 -->
+      <section class="card">
+        <div class="row">
+          <div>
+            <div class="kicker">Lv.2</div>
+            <h2>なぜ「記憶」がなくなるのか？ <span class="pill">準備中</span></h2>
+          </div>
+          <span class="pill">基礎：コンテキスト</span>
+        </div>
+
+        <p class="muted">
+          会話が長くなると精度が落ちる理由や、コンテキストの考え方を整理する予定です。
+        </p>
+
+        <div class="btns">
+          <a class="btn" href="lv2-extra.html">
+            ✍️ PS / 後日談（準備中）
+          </a>
+        </div>
+
+        <p class="muted2">
+          ※ 公開準備ができたら、ここにPDFリンクを追加します。
+        </p>
+      </section>
+
+      <!-- Lv.3+ -->
+      <section class="card">
+        <div class="row">
+          <div>
+            <div class="kicker">Lv.3〜Lv.5</div>
+            <h2>Coming Soon… <span class="pill">内容は調整予定</span></h2>
+          </div>
+          <span class="pill">実務の“ふーん”を狙う</span>
+        </div>
+
+        <p class="muted">
+          後半は、ハルシネーション、精度劣化、出力崩れなど、
+          実務で触っていて「なるほど」と腑に落ちるテーマを中心に扱う予定です。
+          ただし題材は状況に応じて変更する可能性があるため、まずは “Coming Soon” としておきます！
+        </p>
+
+        <div class="btns">
+          <a class="btn" href="series-notes.html">🧩 シリーズメモ（仮）</a>
+        </div>
+
+        <p class="muted2">
+          ※ ここは将来、各回のリンク一覧に差し替える想定です。
+        </p>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="small">
+      更新していく母艦ページです。リンク切れや見づらい点があれば気軽に教えてください。
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
